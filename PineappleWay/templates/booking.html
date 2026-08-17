@@ -1,0 +1,313 @@
+{% extends "base.html" %}
+
+{% block title %}Book Your Tour | PineappleWay{% endblock %}
+
+{% block content %}
+
+<!-- ================= HEADER ================= -->
+
+<section class="bg-success text-white py-5">
+    <div class="container text-center">
+        <h1>Book Your Dream Vacation</h1>
+        <p>Fill in your details and confirm your booking.</p>
+    </div>
+</section>
+
+<!-- ================= BOOKING FORM ================= -->
+
+<section class="container py-5">
+
+<div class="row">
+
+<!-- Booking Form -->
+
+<div class="col-lg-8">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h3 class="mb-4">Booking Details</h3>
+
+<form method="POST">
+
+<div class="row">
+
+<h4 class="mb-4">Customer Details</h4>
+
+<div class="alert alert-light border">
+
+    <p>
+        <strong>Name:</strong>
+        {{ user.fullname }}
+    </p>
+
+    <p>
+        <strong>Email:</strong>
+        {{ user.email }}
+    </p>
+
+    <p>
+        <strong>Phone:</strong>
+        {{ user.phone }}
+    </p>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label">
+
+Selected Package
+
+</label>
+
+<input
+
+type="text"
+
+name="package_name"
+
+class="form-control"
+
+value="{{ package.name }}"
+
+readonly>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label">Travel Date</label>
+
+<input
+
+type="date"
+
+name="travel_date"
+
+class="form-control"
+
+required>
+
+</div>
+
+<div class="col-md-6 mb-3">
+
+<label class="form-label">Number of Travelers</label>
+
+<input
+
+type="number"
+
+name="travellers"
+
+class="form-control"
+
+min="1"
+
+max="20"
+
+value="2">
+
+</div>
+
+<div class="col-12 mb-3">
+
+<label class="form-label">Special Requests</label>
+
+<textarea
+
+name="special_request"
+
+class="form-control"
+
+rows="4"
+
+placeholder="Any special requests?">
+
+</textarea>
+
+</div>
+
+<div class="col-12">
+
+<button class="btn btn-success btn-lg w-100">
+
+Confirm Booking
+
+</button>
+
+</div>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Booking Summary -->
+
+<div class="col-lg-4">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h3>Booking Summary</h3>
+
+<hr>
+
+<p>
+
+<strong>Package</strong>
+
+<span class="float-end">
+
+{{ package.name }}
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Duration</strong>
+
+<span class="float-end">
+
+{{ package.duration }}
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Hotel</strong>
+
+<span class="float-end">
+
+{{ package.hotel }}
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Meals</strong>
+
+<span class="float-end">
+
+{{ package.meals }}
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Guide</strong>
+
+<span class="float-end">
+
+{{ package.guide }}
+
+</span>
+
+</p>
+
+<hr>
+
+<h4>
+
+Total Price
+
+<span class="float-end text-success">
+
+₹{{ package.price }}
+
+</span>
+
+</h4>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= WHY BOOK WITH US ================= -->
+
+<section class="container pb-5">
+
+<div class="row text-center">
+
+<div class="col-md-4">
+
+<i class="fa-solid fa-shield-halved fa-3x text-success"></i>
+
+<h4 class="mt-3">
+
+Secure Booking
+
+</h4>
+
+<p>
+
+100% Safe and Secure Payment
+
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<i class="fa-solid fa-headset fa-3x text-primary"></i>
+
+<h4 class="mt-3">
+
+24×7 Support
+
+</h4>
+
+<p>
+
+Travel Experts Available Anytime
+
+</p>
+
+</div>
+
+<div class="col-md-4">
+
+<i class="fa-solid fa-wallet fa-3x text-warning"></i>
+
+<h4 class="mt-3">
+
+Best Price
+
+</h4>
+
+<p>
+
+Affordable Packages Guaranteed
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}
