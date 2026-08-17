@@ -1,0 +1,141 @@
+{% extends "base.html" %}
+
+{% block title %}Contact Us | PineappleWay{% endblock %}
+
+{% block content %}
+
+<section class="bg-primary text-white py-5">
+
+    <div class="container text-center">
+
+        <h1>Contact Us</h1>
+
+        <p>We'd love to hear from you.</p>
+
+    </div>
+
+</section>
+
+<section class="container my-5">
+
+<div class="row">
+
+<!-- Left Side -->
+
+<div class="col-lg-5">
+
+    <div class="card shadow h-100">
+
+        <div class="card-body">
+
+            <h3>Contact Information</h3>
+
+            <hr>
+
+            <p>
+                <i class="fa-solid fa-location-dot text-danger"></i>
+                11,OM Shanti Commercial Complex,Sector 1,Airoli,Navi Mumbai-400 708,INDIA.
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone text-success"></i>
+                +91 9594392000
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope text-primary"></i>
+                info@pbsworld.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock text-warning"></i>
+                Mon–Sat : 9:00 AM – 7:00 PM
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- Right Side -->
+
+<div class="col-lg-7">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h3>Send us a Message</h3>
+
+<hr>
+
+<form method="POST">
+
+<div class="mb-3">
+
+<label>Name</label>
+
+<input
+type="text"
+class="form-control"
+name="name"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Email</label>
+
+<input
+type="email"
+class="form-control"
+name="email"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Subject</label>
+
+<input
+type="text"
+class="form-control"
+name="subject"
+required>
+
+</div>
+
+<div class="mb-3">
+
+<label>Message</label>
+
+<textarea
+class="form-control"
+rows="5"
+name="message"
+required></textarea>
+
+</div>
+
+<button class="btn btn-success">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}Home | PineappleWay{% endblock %}
+
+{% block content %}
+
+<!-- ================= HERO SECTION ================= -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <h1>Explore the World with PineappleWay</h1>
+
+        <p>
+            Discover breathtaking destinations, affordable tour packages,
+            and unforgettable travel experiences.
+        </p>
+
+        <a href="/packages" class="btn btn-warning btn-lg">
+            Explore Packages
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= POPULAR DESTINATIONS ================= -->
+
+<section class="container">
+
+    <div class="section-title">
+
+        <h2>Popular Destinations</h2>
+
+        <p>Explore our most loved travel destinations.</p>
+
+    </div>
+
+    <div class="row">
+
+{% for package in packages %}
+
+<div class="col-lg-4 mb-4">
+
+    <div class="card shadow h-100">
+
+        <img
+        src="{{ url_for('static',
+        filename='images/' + package.image) }}"
+        class="card-img-top"
+        style="height:250px; object-fit:cover;">
+
+        <div class="card-body">
+
+            <h4>{{ package.name }}</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot text-danger"></i>
+                {{ package.location }}
+            </p>
+
+            <p>
+                <i class="fa-solid fa-clock text-success"></i>
+                {{ package.duration }}
+            </p>
+
+            <h5 class="text-success">
+                ₹{{ package.price }}
+            </h5>
+
+            <div class="d-grid gap-2">
+
+                <a href="{{ url_for('package_details',
+                    package_name=package.name) }}"
+                    class="btn btn-primary">
+
+                    View Details
+
+                </a>
+
+                <a href="{{ url_for('booking',
+                    package=package.name) }}"
+                    class="btn btn-success">
+
+                    Book Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+
+<section class="container my-5">
+
+    <div class="section-title">
+
+        <h2>Why Choose PineappleWay?</h2>
+
+    </div>
+
+    <div class="row text-center">
+
+        <div class="col-md-4">
+
+            <i class="fa-solid fa-plane fa-3x text-warning mb-3"></i>
+
+            <h4>Best Destinations</h4>
+
+            <p>Explore handpicked destinations around the world.</p>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <i class="fa-solid fa-wallet fa-3x text-success mb-3"></i>
+
+            <h4>Affordable Packages</h4>
+
+            <p>Travel without breaking your budget.</p>
+
+        </div>
+
+        <div class="col-md-4">
+
+            <i class="fa-solid fa-headset fa-3x text-primary mb-3"></i>
+
+            <h4>24×7 Support</h4>
+
+            <p>Our travel experts are always available.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+
+<section class="container my-5">
+
+    <div class="contact-box text-center">
+
+        <h2>Subscribe to Our Newsletter</h2>
+
+        <p>Get exclusive travel offers and updates.</p>
+
+        <form>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md-6">
+
+                    <input type="email"
+                           class="form-control mb-3"
+                           placeholder="Enter your Email">
+
+                </div>
+
+                <div class="col-md-2">
+
+                    <button class="btn btn-warning w-100">
+
+                        Subscribe
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

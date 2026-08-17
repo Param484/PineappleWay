@@ -1,0 +1,92 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Add Package{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h2>Add Package</h2>
+
+<form method="POST"
+    enctype="multipart/form-data">
+
+<div class="mb-3">
+<input class="form-control" name="name" placeholder="Package Name" required>
+</div>
+
+<div class="mb-3">
+<input class="form-control" name="location" placeholder="Location" required>
+</div>
+
+<div class="mb-3">
+<input class="form-control" name="duration" placeholder="Duration" required>
+</div>
+
+<div class="mb-3">
+<input class="form-control" type="number" name="price" placeholder="Price" required>
+</div>
+
+<div class="mb-3">
+<input class="form-control" name="hotel" placeholder="Hotel">
+</div>
+
+<div class="mb-3">
+<input class="form-control" name="meals" placeholder="Meals">
+</div>
+
+<div class="mb-3">
+<input class="form-control" name="guide" placeholder="Guide">
+</div>
+
+<div class="mb-3">
+<input
+type="file"
+class="form-control"
+name="image"
+accept="image/*">
+</div>
+
+<div class="mb-3">
+<textarea class="form-control"
+name="description"
+rows="5"
+placeholder="Description"></textarea>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Itinerary</label>
+    <textarea
+        class="form-control"
+        name="itinerary"
+        rows="5"
+        placeholder="One day/activity per line"></textarea>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Included</label>
+    <textarea
+        class="form-control"
+        name="included"
+        rows="5"
+        placeholder="One item per line"></textarea>
+</div>
+
+<div class="mb-3">
+    <label class="form-label">Excluded</label>
+    <textarea
+        class="form-control"
+        name="excluded"
+        rows="5"
+        placeholder="One item per line"></textarea>
+</div>
+
+<button class="btn btn-success">
+Save Package
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

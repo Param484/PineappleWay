@@ -1,0 +1,90 @@
+{% extends "admin_base.html" %}
+
+{% block title %}Update Booking{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow">
+
+        <div class="card-header bg-primary text-white">
+            <h3>Update Booking Status</h3>
+        </div>
+
+        <div class="card-body">
+
+            <p><strong>Booking ID:</strong> {{ booking.booking_id }}</p>
+
+            <p><strong>Customer:</strong> {{ booking.user_name }}</p>
+
+            <p><strong>Email:</strong> {{ booking.user_email }}</p>
+
+            <p><strong>Package:</strong> {{ booking.package_name }}</p>
+
+            <p><strong>Travel Date:</strong> {{ booking.travel_date }}</p>
+
+            <p><strong>Travellers:</strong> {{ booking.travellers }}</p>
+
+            <hr>
+
+            <form method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Booking Status
+                    </label>
+
+                    <select
+                        class="form-select"
+                        name="status">
+
+                        <option value="Pending"
+                        {% if booking.status=="Pending" %}selected{% endif %}>
+                        Pending
+                        </option>
+
+                        <option value="Approved"
+                        {% if booking.status=="Approved" %}selected{% endif %}>
+                        Approved
+                        </option>
+
+                        <option value="Completed"
+                        {% if booking.status=="Completed" %}selected{% endif %}>
+                        Completed
+                        </option>
+
+                        <option value="Cancelled"
+                        {% if booking.status=="Cancelled" %}selected{% endif %}>
+                        Cancelled
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button
+                    class="btn btn-success">
+
+                    Update Booking
+
+                </button>
+
+                <a
+                href="{{ url_for('admin_bookings') }}"
+                class="btn btn-secondary">
+
+                    Back
+
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
